@@ -14,7 +14,7 @@ end_date = "2024-01-01"
 
 price_data = {}
 for company, ticker in smi_companies.items():
-    stock_data = yf.download(ticker, start=start_date, end=end_date, progress=False)["Adj Close"]
+    stock_data = yf.download(ticker, start=start_date, end=end_date)["Adj Close"]
     price_data[company] = stock_data
 
 # Combine data into a DataFrame
