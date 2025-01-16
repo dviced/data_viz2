@@ -1,24 +1,9 @@
-import streamlit as st
-import yfinance as yf
 import pandas as pd
 import plotly.express as px
+import streamlit as st
 
-# Define the SMI companies and their tickers
-smi_companies = {
-    "Zurich Insurance Group AG": "ZURN.SW",
-}
-
-# Fetch historical data for the companies
-start_date = "2023-01-01"
-end_date = "2024-01-01"
-
-price_data = {}
-for company, ticker in smi_companies.items():
-    stock_data = yf.download(ticker, start=start_date, end=end_date)["Adj Close"]
-    price_data[company] = stock_data
-
-# Combine data into a DataFrame
-df = pd.DataFrame(price_data)
+#load data from csv_file "smi_price_data.csv"
+df = pd.read_csv("smi_price_data.csv", index_col=0)
 
 # Reshape for Plotly (long format)
 df_reset = df.reset_index().melt(id_vars="Date", var_name="Company", value_name="Stock Price")
