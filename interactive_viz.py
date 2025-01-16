@@ -6,15 +6,11 @@ import plotly.express as px
 # Define the SMI companies and their tickers
 smi_companies = {
     "Zurich Insurance Group AG": "ZURN.SW",
-    "Lonza Group AG": "LONN.SW",
-    "Givaudan SA": "GIVN.SW",
-    "Swiss Life Holding AG": "SLHN.SW",
-    "Geberit AG": "GEBN.SW",
 }
 
 # Fetch historical data for the companies
-start_date = "2024-01-01"
-end_date = "2025-01-01"
+start_date = "2023-01-01"
+end_date = "2024-01-01"
 
 price_data = {}
 for company, ticker in smi_companies.items():
