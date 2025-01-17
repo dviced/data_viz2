@@ -14,7 +14,7 @@ fig = px.line(
     x="Date", 
     y="Stock Price", 
     color="Company", 
-    title="SMI Components Stock Prices (2024)",
+    title="The magnificent 7 Stock Prices",
     labels={"Date": "Date", "Stock Price": "Price (CHF)", "Company": "Company"},
     color_discrete_sequence=px.colors.qualitative.Set2  # Custom color palette
 )
