@@ -20,4 +20,4 @@ fig = px.line(
 )
 fig.update_layout(template="plotly_white", hovermode="x unified")
 
-st.plotly_chart(fig)
+st.plotly_chart(fig, use_container_width=True)
