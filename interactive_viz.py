@@ -5,6 +5,9 @@ import streamlit as st
 #load data from csv_file "smi_price_data.csv"
 df = pd.read_csv("smi_price_data.csv", index_col=0)
 
+# Set the Streamlit page configuration
+st.set_page_config(page_title="Stock Prices Dashboard")  # Custom page title
+
 # Reshape for Plotly (long format)
 df_reset = df.reset_index().melt(id_vars="Date", var_name="Company", value_name="Stock Price")
 
